@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: temp-convert-app-pod
+
+spec:
+  containers:
+    - name: temp-convert-app-ctr
+      image: rootovertwo/temp-convert-app
+      ports:
+        - containerPort: 5000
+      imagePullPolicy: Always
