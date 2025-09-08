@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: temp-convert-app-deployment
+  labels:
+    app: temp-convert-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app:  temp-convert-app
+  template:
+    metadata:
+      labels:
+        app: temp-convert-app
+    spec:
+      containers:
+        - name: temp-convert-app-ctr
+          image: rootovertwo/temp-convert-app
+          ports:
+            - containerPort: 5000
+          imagePullPolicy: Always
+
